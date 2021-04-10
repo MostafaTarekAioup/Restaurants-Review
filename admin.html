@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Admin Control</title>
+        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+        <script>
+            $(document).ready(function(){
+           var $form = $('form');
+           $form.submit(function(){
+              $.post($(this).attr('action'), $(this).serialize(), function(response){
+                    // do something here on success
+              },'json');
+              return false;
+           });
+        });
+            
+            </script>
+
+    </head>
+
+    <body>
+        <h1>Admin Control Pannel</h1>
+        <br>
+        <form action="comments.php" method="POST"> 
+            <label> Restaurant Name : <br> <input type="text" name="resname" required></label>
+               <br>
+            <label> Restaurant city : <br> <input type="text" name="rescity" required></label>
+            <br>
+            <label> Restaurant image link : <br> <input type="text" name="resimg" required></label>
+            <br>
+            <label> Restaurant Address : <br> <input type="text" name="resaddress" required></label>
+            <br>
+            <label> Restaurantcoord : <br> <input type="text" name="lat"> required : <input type="text" name="lng" required></label>
+            <br>
+            <label> Restaurant tybe : <br> <input type="text" name="restype" required></label>
+            <br>
+            <input type="submit">
+        </form>
+        <a href="remove.html">Remove</a>
+    </body>
+</html>

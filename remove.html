@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Comment try</title>
+        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+        <script>
+            $(document).ready(function(){
+           var $form = $('form');
+           $form.submit(function(){
+              $.post($(this).attr('action'), $(this).serialize(), function(response){
+                    // do something here on success
+              },'json');
+              return false;
+           });
+        });
+            
+            </script>
+    </head>
+    <body>
+        <form action="remove.php" method="POST">
+            <label>Restaurant ID <br><input type="text" name="resid" required></label><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>
